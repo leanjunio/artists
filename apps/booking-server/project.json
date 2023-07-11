@@ -1,7 +1,7 @@
 {
-  "name": "artists",
+  "name": "booking-server",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/artists/src",
+  "sourceRoot": "apps/booking-server/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -11,12 +11,12 @@
       "options": {
         "target": "node",
         "compiler": "tsc",
-        "outputPath": "dist/apps/artists",
-        "main": "apps/artists/src/main.ts",
-        "tsConfig": "apps/artists/tsconfig.app.json",
-        "assets": ["apps/artists/src/assets"],
+        "outputPath": "dist/apps/booking-server",
+        "main": "apps/booking-server/src/main.ts",
+        "tsConfig": "apps/booking-server/tsconfig.app.json",
+        "assets": ["apps/booking-server/src/assets"],
         "isolatedConfig": true,
-        "webpackConfig": "apps/artists/webpack.config.js"
+        "webpackConfig": "apps/booking-server/webpack.config.js"
       },
       "configurations": {
         "development": {},
@@ -27,14 +27,14 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "artists:build"
+        "buildTarget": "booking-server:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "artists:build:development"
+          "buildTarget": "booking-server:build:development"
         },
         "production": {
-          "buildTarget": "artists:build:production"
+          "buildTarget": "booking-server:build:production"
         }
       }
     },
@@ -42,14 +42,14 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/artists/**/*.ts"]
+        "lintFilePatterns": ["apps/booking-server/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/artists/jest.config.ts",
+        "jestConfig": "apps/booking-server/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
